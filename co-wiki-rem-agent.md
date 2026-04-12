@@ -29,7 +29,7 @@ The wiki is *the* dominant design for all-in-one reading, navigation, editing, a
 
 The Co-Wiki proposed here is a flat and brutally simple architecture. The wiki is a legible memory layer. *It is warm storage.* It dreams of dramatically reducing vector DB reads, but its priority lies in presenting natural language and reducing human cognitive load.   
 
-![Co-Wiki Memory Stack](co_wiki_memory_stack_doc.svg)
+![Co-Wiki Memory Stack](co_wiki_memory_stack_dark.svg)
 
 Here is the Co-Wiki design philosophy:
 
