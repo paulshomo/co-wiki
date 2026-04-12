@@ -28,7 +28,9 @@ Karpathy didn’t endeavor to break out of chat hell and isn’t trying to reima
 The wiki is *the* dominant design for all-in-one reading, navigation, editing, approval, and versioning workflows. Highly underrated is the wiki’s organic knowledge chunking.
 
 The Co-Wiki proposed here is a flat and brutally simple architecture. The wiki is a legible memory layer. *It is warm storage.* It dreams of dramatically reducing vector DB reads, but its priority lies in presenting natural language and reducing human cognitive load.   
-![][image1]  
+
+![Co-Wiki Memory Stack](co_wiki_memory_stack_doc.svg)
+
 Here is the Co-Wiki design philosophy:
 
 ### Legibility and co-authorship of warm storage are paramount  
