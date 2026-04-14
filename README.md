@@ -3,6 +3,8 @@
 
 **[Read the full manifesto →](co-wiki-rem-agent.md)**
 
+**[Also see the Frequently Asked Questions (FAQ)](FAQ.md)**
+
 ---
 
 The chat interface is not a dominant design for LLM knowledge work. 
