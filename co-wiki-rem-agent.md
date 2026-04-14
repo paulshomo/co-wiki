@@ -106,6 +106,8 @@ Page access is the cognitive concept called Repetition. The user repeating infor
 
 The first Co-Wiki deployment is a serious experiment in human memory. How large is an individual's top-of-mind adjacent knowledge when externalized? We’ve never measured it. And once it can be externalized, is the craving to continually extend the mind unquenchable?
 
+[Also see Frequently Asked Questions (FAQ)](FAQ.md)
+
 ## Invitation to Build   
 I'm an independent researcher in the middle of a series of papers and a book on applied “edge epistemology.” I have too many time commitments to ship and maintain code. Someone else needs to build this before it’s too late.
 
