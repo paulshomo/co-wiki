@@ -4,7 +4,7 @@
 
 Karpathy's [LLM Knowledge Base](https://x.com/karpathy/status/2039805659525644595) is composed of the Obsidian front end and visualizations, command line tools, the Obsidian Vault wiki, and would require Git for versioning.
 
-The [Co-Wiki](co-0wiki-rem-agent.md) is a wiki like DokuWiki and an LLM enabled with mutual filesystem access. For reading and searching no infrastructure or API integration is even needed.
+The [Co-Wiki](co-wiki-rem-agent.md) is a wiki like DokuWiki and an LLM enabled with mutual filesystem access. For reading and searching no infrastructure or API integration is even needed.
 
 Writing and maintenance operations by the REM Agent, that automatically maintains the wiki, would require API integration for atomic operations.
 
