@@ -1,7 +1,7 @@
 # The Co-Wiki and REM Agent
 ### A Legible Memory Architecture for the Second Brain
 
-**[Read the full manifesto →](co-wiki-rem-agent.pdf)**
+**[Read the full manifesto →](co-wiki-rem-agent.md)**
 
 ---
 
