@@ -20,7 +20,7 @@ If you have the skills and want to build and/or maintain a high-profile open sou
 
 ## Has anyone built a working implementation of the Co-Wiki architecture?
 
-Yes. Within 48 hours of the Co-Wiki manifesto being published in April 2026, [@copyleftdev](https://github.com/copyleftdev) built a formally verified Rust implementation: [cowiki-rs](https://github.com/copyleftdev/cowiki-rs).
+Yes. Within 48 hours of the Co-Wiki manifesto being published in April 2026, Don Johnson ([@copyleftdev](https://github.com/copyleftdev)) built a formally verified Rust implementation: [cowiki-rs](https://github.com/copyleftdev/cowiki-rs).
 
 The implementation includes:
 
@@ -58,6 +58,8 @@ The retrieval difference is structural. RAG queries an index. The Co-Wiki traver
 Don Johnson's formally verified prototype demonstrates this directly. Query "memory sleep consolidation": vector search returns 1 page, spreading activation returns 7 pages in 68 microseconds. The difference isn't the algorithm — it's the knowledge structure the Co-Wiki builds over time that makes richer retrieval possible.
 
 RAG doesn't compound. The Co-Wiki does.
+
+Independent academic research is converging on the same conclusion. The SYNAPSE paper (Pavlović et al., 2026) argues that standard RAG suffers from "Contextual Isolation" — a failure mode stemming from what it calls the "Search Assumption": that the relevance of a past memory is strictly determined by its semantic proximity to the current query. SYNAPSE proposes spreading activation over a knowledge graph as the solution, demonstrating that graph-based retrieval surfaces causally and associatively related memories that share no lexical or embedding overlap with the query. The Co-Wiki architecture was published independently and reached the same conclusion from first principles.
 
 ## What is the Legible Memory Layer?
 
