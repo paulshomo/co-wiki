@@ -2,7 +2,7 @@
 
 ## Where's the install link, I want to extend my brain daily with the Co-Wiki?
 
-The Co-Wiki and REM Agent isn't a finished product — it's an open design and an open architecture. It's waiting for developers to build.
+The Co-Wiki and REM Agent isn't a finished product — it's an open design and an open architecture. It's waiting for developers to build. It is also meant to be a verifiable public forecast as to the future of Human-LLM UX, warm storage, and retrieval design.
 
 The formally verified engine is live at cowiki.tech. The remaining open invitation is the DokuWiki backend integration and the full human-agent co-authorship UI layer — the piece that completes the Legible Memory Layer as designed.
 
@@ -134,6 +134,74 @@ Three designs, three different bets:
 These are not necessarily competing. OB1 as your cross-tool memory persistence layer, the Co-Wiki as your extended cognition workspace — the architecture supports both.
 
 For a deeper contrast of the OB1 and Karpathy approaches, Nate B. Jones published a [video](https://www.youtube.com/watch?v=dxq7WtWxi44) directly comparing them. Watch particularly from the 27-minute mark.
+
+## Is the Co-Wiki architecture being validated by independent teams?
+
+Yes — and the convergence is accelerating. The Co-Wiki and REM Agent was published April 15, 2026. In the weeks and months that followed, several independent teams and researchers reached strikingly similar architectural conclusions without coordination.
+
+This convergence is not coincidence. It reflects a deeper truth about how AI memory architecture needs to work — a truth that the Co-Wiki's biomimicry of human sleep and associative memory was designed around from the start.
+
+### The Convergence Timeline
+
+**September 2025 — PageIndex (VectifyAI)**
+Mingtian Zhang and Yu Tang launched PageIndex, a vectorless, reasoning-based RAG framework that eliminates vector databases and chunking entirely. Documents are organized into their natural structural sections — chapters, paragraphs, tables — and retrieval follows explicit structural links rather than semantic similarity. When querying a Federal Reserve annual report, vector search fails to find data that requires following a footnote reference to an appendix. PageIndex follows the structural link and finds it. The framework reached 23,000+ GitHub stars by March 2026. Repository: [github.com/VectifyAI/PageIndex](https://github.com/VectifyAI/PageIndex)
+
+PageIndex uses structural navigation — following explicit document links. The Co-Wiki uses spreading activation — propagating through human-authored backlinks. Different graph structures, same core insight: semantic similarity alone is the wrong retrieval primitive for knowledge that requires following relationships.
+
+**December 17, 2025 — Pavlović et al. spreading activation RAG preprint**
+Jovan Pavlović, Miklós Krész, and László Hajdu submitted "Leveraging Spreading Activation for Improved Document Retrieval in Knowledge-Graph-Based RAG Systems" to arXiv (2512.15922), revised February 6, 2026. The paper proposes a GraphRAG framework integrating spreading activation — the same cognitive psychology mechanism Collins and Loftus described in 1975 — as the retrieval algorithm over a knowledge graph. The authors argue that standard RAG frameworks "regard all retrieved information as equally reliable, overlooking the varying credibility and interconnected nature of large textual corpora." arXiv: [arxiv.org/abs/2512.15922](https://arxiv.org/abs/2512.15922)
+
+**January 6, 2026 — SYNAPSE preprint (Jiang et al.), revised February 16, 2026**
+Hanqi Jiang and ten co-authors submitted "SYNAPSE: Empowering LLM Agents with Episodic-Semantic Memory via Spreading Activation" to arXiv (2601.02744). SYNAPSE models memory as a dynamic graph where relevance emerges from spreading activation rather than pre-computed links, integrating lateral inhibition and temporal decay — mechanisms drawn directly from cognitive science. The paper demonstrates a 23% improvement on complex multi-hop reasoning tasks while reducing token consumption by 95% compared to full-context methods. The authors cite Collins and Loftus (1975) explicitly as the cognitive science foundation. The Co-Wiki architecture cited the same source and reached the same architectural conclusion independently. arXiv: [arxiv.org/abs/2601.02744](https://arxiv.org/abs/2601.02744)
+
+Two independent academic teams, in the same two-month window, proposing spreading activation over knowledge graphs as the solution to RAG's retrieval limitations — neither aware of the other, neither aware of the Co-Wiki.
+
+**April 2026 — Andrej Karpathy's LLM Knowledge Base**
+Published in early April 2026. Karpathy's framing: "Obsidian is the IDE; the LLM is the programmer; the wiki is the codebase." The LLM owns the wiki entirely — it creates, links, updates, and maintains all pages. The human curates raw sources and asks questions. The human rarely if ever edits the wiki directly.
+
+Three operations: ingest (process raw sources into LLM-generated pages), query (vector search against embeddings), and lint (manual health checks). A backlink graph forms as a byproduct of LLM authorship — the same flat file topology the Co-Wiki uses — but it is never traversed at retrieval time. The graph exists. It is queried past.
+
+Karpathy described his current system as "a hacky collection of scripts" while calling for "an incredible new product" to replace it. He did not propose split, merge, diff, or human editing of wiki pages as first-class operations. He did not propose spreading activation retrieval, autonomous background maintenance, or the wiki workspace as a human-agent co-authorship environment. His design is a RAG replacement optimized for LLM-authored knowledge organization. The Co-Wiki is the extended cognition architecture that takes the flat file foundation he correctly identified and builds the complete design around it.
+
+**April 15, 2026 — Co-Wiki and REM Agent published**
+The Co-Wiki manifesto proposed wiki-based warm memory storage with spreading activation graph retrieval and an autonomous REM Agent running background consolidation cycles modeled on human sleep. Copyright registered CC BY 4.0. Gist: [gist.github.com/paulshomo/69cf99e3185fa7ad0f50fc0e38bcd424](https://gist.github.com/paulshomo/69cf99e3185fa7ad0f50fc0e38bcd424)
+
+**April 17, 2026 — cowiki-rs formally verified implementation**
+Don Johnson ([@copyleftdev](https://github.com/copyleftdev)) built a formally verified Rust implementation within 48 hours of the manifesto's publication. Nine architectural claims tested. Seven proven. Two corrected and strengthened. Empirical result: spreading activation returns 7 pages in 68 microseconds on a query where vector search returns 1. Live at [cowiki.tech](https://cowiki.tech).
+
+**May 6, 2026 — Anthropic's "dreaming" for Claude Managed Agents**
+Announced at the Code with Claude developer conference, Anthropic introduced a scheduled background process for Claude Managed Agents that consolidates memory between sessions — pruning stale entries, merging duplicates, resolving contradictions, and reorganizing knowledge files. Anthropic explicitly invoked the REM sleep metaphor, acknowledging it is "surprisingly accurate." The Co-Wiki REM Agent described the same concept three weeks earlier.
+
+### What the Co-Wiki Originates
+
+The convergence timeline shows that spreading activation over knowledge graphs was proposed by academic researchers before the Co-Wiki's April 15, 2026 publication date. This requires a precise accounting of what the Co-Wiki actually originates — and what it shares with prior work.
+
+**Prior art acknowledged:**
+- Spreading activation as a retrieval mechanism over knowledge graphs — Pavlović et al. (December 2025) and SYNAPSE (January 2026) both propose this independently
+- Flat file wiki storage as the right foundation for AI knowledge — Karpathy (early April 2026)
+- Background knowledge maintenance — Karpathy (manual linting scripts)
+
+**What the Co-Wiki originates that no prior work combines:**
+
+**1. The Legible Memory Layer as an integrated design principle.** Pavlović and SYNAPSE are retrieval algorithm papers — they propose spreading activation as an improvement to RAG over automated knowledge graphs. They do not propose a wiki workspace, a human-agent co-authorship model, or a legible flat file layer as a unified architecture for human extended cognition. Karpathy has the flat file wiki but not spreading activation retrieval. The Co-Wiki is the first design to integrate all three — legible flat file storage, spreading activation retrieval, and autonomous maintenance — as a single coherent architecture specification for personal extended cognition.
+
+**2. The REM Agent as an autonomous maintenance cycle explicitly modeled on sleep consolidation.** SYNAPSE incorporates temporal decay. Pavlović has no maintenance mechanism. Karpathy has manual linting. The Co-Wiki's REM Agent is the first to propose autonomous background maintenance explicitly modeled on REM sleep — including dream cycles that discover new backlinks nobody explicitly created. The biological metaphor is the design specification, not a rhetorical frame applied after the fact.
+
+**3. Human-agent co-authorship as the graph-building mechanism.** Pavlović and SYNAPSE build knowledge graphs from automated pipelines or pre-existing structured data. Karpathy has the LLM author the wiki with humans reading. The Co-Wiki proposes that human and agent co-author together, and that wiki operations — split, merge, diff, approve — are ontological work that builds the graph's topology as a byproduct of natural knowledge work. This is not in any prior work.
+
+**4. The wiki workspace as an inducer of ontological pre-chunking.** No prior work articulates that the wiki presentation layer doesn't merely store knowledge — it generates the knowledge structure that makes spreading activation possible, through the cognitive grain of human authorship. The chunking is not algorithmic. It emerges from how humans and agents naturally think and write together. This is the Extended Mind thesis (Clark and Chalmers, 1998) applied as an engineering specification.
+
+The Co-Wiki's contribution is not spreading activation alone — that was being independently discovered. The contribution is the complete architectural integration: a legible human-agent co-authored wiki workspace, with spreading activation retrieval traversing a graph built by human authorship and autonomous REM Agent maintenance, as a unified design for personal extended cognition.
+
+### What the Convergence Means
+
+These teams did not coordinate. They reached similar architectural conclusions independently because the underlying problem — how AI systems should store, maintain, and retrieve knowledge over time — has a shape, and that shape mirrors how human memory works.
+
+The Co-Wiki's design was grounded in that biomimicry from the start. The REM Agent was named for REM sleep deliberately. Spreading activation was chosen because Collins and Loftus described it in 1975 as the mechanism of human associative memory. The flat file foundation was chosen because human-readable legible storage is what makes knowledge a genuine extension of cognition rather than an opaque database.
+
+When multiple independent teams converge on similar architectures, it is evidence that the underlying approach is right. The Co-Wiki is the first to propose the complete integrated design — retrieval, storage, maintenance, and human-agent co-authorship — as a unified architecture for personal extended cognition, with a timestamped copyright registration predating Anthropic's announcement and the broader developer community's arrival at the same conclusions.
+
+The remaining open invitation: the DokuWiki backend integration and the full human-agent co-authorship UI layer. The engine is proven. The architecture is validated. The product is waiting to be built.
 
 ## How does the Co-Wiki compare to the classic 5 Layers of Agent Memory?
 
